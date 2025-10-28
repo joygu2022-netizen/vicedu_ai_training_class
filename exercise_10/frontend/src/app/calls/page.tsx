@@ -287,7 +287,6 @@ export default function CallsPage() {
                 </div>
               </div>
 
-              {/* Audio Controls - Only show when in call */}
               {inCall && (
                 <div className="px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100">
                   <div className="flex items-center justify-between">
