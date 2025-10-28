@@ -75,8 +75,8 @@ async def seed_customers():
     """Create fake customers"""
     async with async_session_maker() as session:
         # Check if customers exist
-        result = await session.execute(select(Customer))
-        if result.scalar_one_or_none():
+        result = await session.execute(select(Customer).limit(1))
+        if result.first():
             print("📊 Customers already exist, skipping...")
             return
         
@@ -104,8 +104,8 @@ async def seed_orders(customers):
     """Create fake orders"""
     async with async_session_maker() as session:
         # Check if orders exist
-        result = await session.execute(select(Order))
-        if result.scalar_one_or_none():
+        result = await session.execute(select(Order).limit(1))
+        if result.first():
             print("🛒 Orders already exist, skipping...")
             return
         
@@ -137,8 +137,8 @@ async def seed_tickets(customers):
     """Create fake support tickets"""
     async with async_session_maker() as session:
         # Check if tickets exist
-        result = await session.execute(select(Ticket))
-        if result.scalar_one_or_none():
+        result = await session.execute(select(Ticket).limit(1))
+        if result.first():
             print("🎫 Tickets already exist, skipping...")
             return
         

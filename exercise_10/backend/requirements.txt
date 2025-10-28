@@ -15,4 +15,5 @@ aiofiles==23.2.1
 pydantic==2.5.3
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
+faker==20.1.0
 
